@@ -1,18 +1,13 @@
 import React from 'react';
 import './App.css';
+import TodoListHeader from "./TodoListHeader";
 
 class App extends React.Component {
     render = () => {
         return (
             <div className="App">
                 <div className="todoList">
-                    <div className="todoList-header">
-                        <h3 className="todoList-header__title">What to Learn</h3>
-                        <div className="todoList-newTaskForm">
-                            <input type="text" placeholder="New task name"/>
-                            <button>Add</button>
-                        </div>
-                    </div>
+                   <TodoListHeader />
                     <div className="todoList-tasks">
                         <div className="todoList-task">
                             <input type="checkbox" checked={true}/>
