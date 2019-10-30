@@ -13,6 +13,7 @@ class App extends React.Component {
                     <TodoListTasks />
                     <TodoListFooter />
                     <Hello let="root" />
+                    <Test let="next" />
                 </div>
             </div>
         );

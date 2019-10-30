@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c759e8b9-8834-4f0e-9535-64c6c994993e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
+>>>>>>> 6def71e334ff5cada52e65afb70227550a7ed429
+>>>>>>> 42cb3b7892d6c4b5951c777158779b830327aede
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -250,14 +257,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572417063145</updated>
+<<<<<<< HEAD
+      <workItem from="1572417064445" duration="1111000" />
+      <workItem from="1572418430434" duration="60000" />
+=======
       <workItem from="1572417064445" duration="1011000" />
+<<<<<<< HEAD
       <workItem from="1572418177052" duration="252000" />
       <workItem from="1572418631500" duration="1000" />
+=======
+      <workItem from="1572418177052" duration="86000" />
+>>>>>>> 6def71e334ff5cada52e65afb70227550a7ed429
+>>>>>>> 42cb3b7892d6c4b5951c777158779b830327aede
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="1264000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="1171000" />
+=======
+    <option name="totallyTimeSpent" value="1097000" />
+>>>>>>> 6def71e334ff5cada52e65afb70227550a7ed429
+>>>>>>> 42cb3b7892d6c4b5951c777158779b830327aede
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
