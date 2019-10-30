@@ -12,7 +12,8 @@ class App extends React.Component {
                     <TodoListHeader />
                     <TodoListTasks />
                     <TodoListFooter />
-                    <Hello />
+                    <Hello let="root" />
+                    <Test let="next" />
                 </div>
             </div>
         );
