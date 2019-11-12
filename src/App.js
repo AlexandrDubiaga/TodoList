@@ -21,11 +21,11 @@ class App extends React.Component {
     }
     onAddTaskClick = () => {
         let newTask = {title: this.newTaskTitleRef.current.value, isDone: true, priority: 'hard'};
-        let nawTasks = [...this.state.tasks,newTask];
+        let nawTasks = [...this.state.tasks, newTask];
         this.setState({
             tasks: nawTasks
         });
-        this.newTaskTitleRef.current.value='';
+        this.newTaskTitleRef.current.value = '';
     }
 
 
