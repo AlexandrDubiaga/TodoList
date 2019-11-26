@@ -5,6 +5,7 @@ class TodoListTask extends React.Component {
         this.props.changeStatus(this.props.tasks,e.currentTarget.checked);
     }
     render = () => {
+        debugger
         let colorSpan = "";
         switch (this.props.priority) {
             case 'hight': {
@@ -24,7 +25,7 @@ class TodoListTask extends React.Component {
         }
         return (
             <div className="todoList-tasks">
-                <input type="checkbox" checked={this.props.isDone} onChange={this.onIsDoneChanged}/>
+                <input type="checkbox" checked={this.props.tasks.isDone?true:false} onChange={this.onIsDoneChanged}/>
                 <span className={colorSpan}>{this.props.tasks.title + " priority: " + this.props.tasks.priority}</span>
             </div>
         );

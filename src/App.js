@@ -16,7 +16,7 @@ class App extends React.Component {
             {title: "jQuery", isDone: false, priority: 'hight'}
         ],
 
-        filterValue: "Active"
+        filterValue: "All"
     }
     onAddTaskClick = (newTitle) => {
         let newTask = {title: newTitle, isDone: true, priority: 'hard'};
@@ -49,11 +49,11 @@ class App extends React.Component {
         const getFilterTasks = (tasks, filterValue) => {
             return this.state.tasks.filter(t => {
                 switch (filterValue) {
-                    case "Active":
+                    case "All":
                         return true;
                     case "Completed":
                         return t.isDone;
-                    case "All":
+                    case "Active":
                         return !t.isDone;
                     default:
                         return false;
