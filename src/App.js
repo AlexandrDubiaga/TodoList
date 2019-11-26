@@ -19,7 +19,7 @@ class App extends React.Component {
         filterValue: "All"
     }
     onAddTaskClick = (newTitle) => {
-        let newTask = {title: newTitle, isDone: true, priority: 'hard'};
+        let newTask = {title: newTitle.title, isDone: newTitle.isDone, priority: 'hard'};
         let nawTasks = [...this.state.tasks, newTask];
         this.setState({
             tasks: nawTasks

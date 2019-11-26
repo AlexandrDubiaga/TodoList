@@ -7,11 +7,15 @@ class TodoListHeader extends React.Component {
 
     state = {
         inputValue: '',
-        error: false
+        error: false,
+        isCheckedDoneTask:false
+
     }
     onUdateInput = (e) => {
+
         this.setState({
-            inputValue: e.currentTarget.value,
+            isCheckedDoneTask: e.currentTarget[0].checked,
+            inputValue: e.currentTarget[1].value
 
         })
         if (e.currentTarget.value != '') {
@@ -25,14 +29,22 @@ class TodoListHeader extends React.Component {
         }
     }
     onAddTaskClick = () => {
+        debugger
+        let obj={
+            title:this.state.inputValue,
+            isDone:this.state.isCheckedDoneTask
+        }
         if (this.state.inputValue === '') {
             this.setState({
                 error: true
             })
         } else {
-            this.props.onAddTaskClick(this.state.inputValue);
+            this.props.onAddTaskClick(obj);
             this.setState({
-                inputValue: ''
+                inputValue: '',
+                isCheckedDoneTask:false
+
+
             })
         }
     }
@@ -42,9 +54,12 @@ class TodoListHeader extends React.Component {
             <div className="todoList-header">
                 <h3 className="todoList-header__title">What to Learn</h3>
                 <div className="todoList-newTaskForm">
-                    <input className={this.state.error ? 'error' : ''} value={this.state.inputValue}
-                           onChange={this.onUdateInput} type="text" placeholder="New task name"/>
+                    <form onChange={this.onUdateInput}>
+                        Done <input checked={this.state.isCheckedDoneTask ? true : false} type="checkbox" name="checked"/>
+                        <input value={this.state.inputValue} name="name"/>
+                    </form>
                     <button onClick={this.onAddTaskClick}>Add</button>
+
                 </div>
             </div>
         );
