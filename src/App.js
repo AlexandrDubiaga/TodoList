@@ -16,7 +16,8 @@ class App extends React.Component {
             {title: "jQuery", isDone: false, priority: 'hight'}
         ],
 
-        filterValue: "All"
+        filterValue: "All",
+        isVisible:true
     }
     onAddTaskClick = (newTitle) => {
         let newTask = {title: newTitle, isDone: true, priority: 'hard'};
@@ -41,6 +42,11 @@ class App extends React.Component {
         })
         this.setState({
             tasks: newTask
+        });
+    }
+    changeButtonsVisibility = (val) => {
+        this.setState({
+            isVisible: val
         });
     }
 
@@ -68,7 +74,7 @@ class App extends React.Component {
                     <TodoListHeader onAddTaskClick={this.onAddTaskClick}/>
                     <TodoListTasks changeStatus={this.changeStatus}
                                    tasks={getFilterTasks(this.state.tasks, this.state.filterValue)}/>
-                    <TodoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
+                    <TodoListFooter changeButtonsVisibility={this.changeButtonsVisibility} isVisible={this.state.isVisible} changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
                 </div>
             </div>
         );
