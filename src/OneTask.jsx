@@ -1,6 +1,6 @@
 import React from 'react';
 
-class TodoListTask extends React.Component {
+class OneTask extends React.Component {
     onIsDoneChanged = (e) => {
         this.props.changeStatus(this.props.tasks,e.currentTarget.checked);
     }
@@ -32,5 +32,5 @@ class TodoListTask extends React.Component {
     }
 }
 
-export default TodoListTask;
+export default OneTask;
 
