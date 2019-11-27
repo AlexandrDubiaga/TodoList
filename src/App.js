@@ -18,8 +18,20 @@ class App extends React.Component {
 
         filterValue: "All"
     }
+    changeTask=(task,obj)=>{
+        let newTask = this.state.tasks.map(t => {
+            if (t !== task) {
+                return t;
+            } else {
+                return {...t, title:obj.title, priority: obj.priority}
+            }
+        })
+        this.setState({
+            tasks: newTask
+        });
+    }
     onAddTaskClick = (newTitle) => {
-        let newTask = {title: newTitle.title, isDone: newTitle.isDone, priority: 'hard'};
+        let newTask = {title: newTitle.title, isDone: newTitle.isDone, priority: newTitle.priority};
         let nawTasks = [...this.state.tasks, newTask];
         this.setState({
             tasks: nawTasks
@@ -44,6 +56,14 @@ class App extends React.Component {
         });
     }
 
+    filterTask=(currentTask)=>{
+        let newState = this.state.tasks.filter(t=>{
+            return t!=currentTask
+        })
+        this.setState({
+            tasks: newState
+        });
+    }
 
     render = () => {
         const getFilterTasks = (tasks, filterValue) => {
@@ -61,12 +81,11 @@ class App extends React.Component {
             });
         }
 
-
         return (
             <div className="App">
                 <div className="todoList">
                     <TodoListHeader onAddTaskClick={this.onAddTaskClick}/>
-                    <TodoListTasks changeStatus={this.changeStatus}
+                    <TodoListTasks changeTask={this.changeTask} changeStatus={this.changeStatus} filterTask={this.filterTask}
                                    tasks={getFilterTasks(this.state.tasks, this.state.filterValue)}/>
                     <TodoListFooter
                         isVisible={this.state.isVisible} changeFilter={this.changeFilter}
