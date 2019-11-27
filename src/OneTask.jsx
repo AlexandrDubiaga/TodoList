@@ -5,7 +5,6 @@ class OneTask extends React.Component {
         this.props.changeStatus(this.props.tasks,e.currentTarget.checked);
     }
     render = () => {
-        debugger
         let colorSpan = "";
         switch (this.props.priority) {
             case 'hight': {
