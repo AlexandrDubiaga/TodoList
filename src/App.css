@@ -30,3 +30,12 @@
 .green {
     color: gray;
 }
+.error{
+    border: 2px solid red;
+}
+.done {
+    opacity: 0.5;
+}
+input{
+    outline:none
+}

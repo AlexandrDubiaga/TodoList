@@ -6,6 +6,7 @@ class OneTask extends React.Component {
     }
     render = () => {
         let colorSpan = "";
+
         switch (this.props.priority) {
             case 'hight': {
                 colorSpan = "red";
@@ -22,10 +23,11 @@ class OneTask extends React.Component {
             default:
                 break;
         }
+        let isDoneTask = this.props.tasks.isDone?'done':'';
         return (
             <div className="todoList-tasks">
-                <input type="checkbox" checked={this.props.tasks.isDone?true:false} onChange={this.onIsDoneChanged}/>
-                <span className={colorSpan}>{this.props.tasks.title + " priority: " + this.props.tasks.priority}</span>
+                <input className={isDoneTask} type="checkbox" checked={this.props.tasks.isDone?true:false} onChange={this.onIsDoneChanged}/>
+                <span className={`${colorSpan} ${isDoneTask}`}>{this.props.tasks.title + " priority: " + this.props.tasks.priority}</span>
             </div>
         );
     }
