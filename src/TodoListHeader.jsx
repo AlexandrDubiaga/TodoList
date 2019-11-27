@@ -55,8 +55,8 @@ class TodoListHeader extends React.Component {
             <div className="todoList-header">
                 <h3 className="todoList-header__title">What to Learn</h3>
                 <div className="todoList-newTaskForm">
-                    <form onChange={this.onUdateInput}>
-                        Done <input checked={this.state.isCheckedDoneTask ? true : false} type="checkbox"
+                    <form onChange={this.onUdateInput} className="formAdd">
+                        isDone <input checked={this.state.isCheckedDoneTask ? true : false} type="checkbox"
                                     name="checked"/>
                         <input className={this.state.error ? 'error' : ''} type="text" value={this.state.inputValue} name="name"/>
                         Priority: <select>{this.state.priority.map((priority, idx) => <option key={idx}>{priority}</option>)}</select>

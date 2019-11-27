@@ -14,8 +14,9 @@ class OneTask extends React.Component {
 
     updateTask = (obj) => {
         let newtask = {
-            title: obj.currentTarget[0].value,
-            priority: obj.currentTarget[1].value
+            isDone:obj.currentTarget[0].value,
+            title: obj.currentTarget[1].value,
+            priority: obj.currentTarget[2].value
         }
         this.props.changeTask(this.props.tasks, newtask)
     }
@@ -53,6 +54,7 @@ class OneTask extends React.Component {
 
                     <div>
                         <form onChange={this.updateTask} className="form">
+                            isDone<input className={isDoneTask} type="checkbox" checked={this.props.tasks.isDone ? true : false}/>
                             <span className={`${colorSpan} ${isDoneTask}`}><input value={this.props.tasks.title}/>Priority:
                                 <select value={this.props.tasks.priority}>{this.state.priority.map((priority, idx) => <option key={idx}>{priority}</option>)}</select>
 </span>

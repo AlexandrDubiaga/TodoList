@@ -23,7 +23,7 @@ class App extends React.Component {
             if (t !== task) {
                 return t;
             } else {
-                return {...t, title:obj.title, priority: obj.priority}
+                return {...t, title:obj.title, isDone:obj.isDone, priority: obj.priority}
             }
         })
         this.setState({
