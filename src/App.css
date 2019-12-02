@@ -39,3 +39,12 @@
 input{
     outline:none
 }
+.form{
+    display: inline-block;
+    margin-right: 3px;
+}
+.formAdd{
+    display: inline-block;
+    margin-right: 3px;
+
+}

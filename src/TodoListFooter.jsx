@@ -27,7 +27,6 @@ class TodoListFooter extends React.Component {
                         <button value="Hide" onClick={this.onShowFiltersClick}>Hide</button>
                     </div> : <button value="Show" onClick={this.onHideFiltersClick}>Show</button>
                 }
-
             </div>
         );
     }
