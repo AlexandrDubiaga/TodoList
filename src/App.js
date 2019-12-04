@@ -89,7 +89,7 @@ class App extends React.Component {
             return t.id != currentTask.id
         })
         let data = this.state.tasks.map(t => t.id);
-        //let maxId = Math.max.apply(null, data);   //не в коем случае блять  не использовать, страшные баги -Infinity , NaN , ,,,,,
+        //let maxId = Math.max.apply(null, data);// не в коем случае блять  не использовать.После всех проверок и сравнений в случае пустых массивов страшные баги -Infinity , NaN , ,,,,,Вся эта ерунда пишеться в localstore и пойди разбери что ваще происходит
         let maxId = 0;
 
         data.forEach(function (elem) {
@@ -104,7 +104,7 @@ class App extends React.Component {
             if (maxDataId < elem)
                 maxDataId = elem;
         });
-        //-Infinity   NaN  !!!Осторожно проверба бляха муха на эту ерунду
+        //-Infinity   NaN  !!!Осторожно проверка бляха муха на эту ерунду
         this.setState({
             tasks: newState,
             id: currentTask.id === maxId ? maxDataId + 1 : maxId + 1
