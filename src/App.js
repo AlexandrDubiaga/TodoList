@@ -98,6 +98,7 @@ class App extends React.Component {
         });
 
         let maxData = data.filter(t => t != maxId);
+        //let maxId = Math.max.apply(null, maxData);  если вернет пустоту то -Infinity а єто полный капец  typeof его не понимает не видит и пошли баги!!!!
         let maxDataId = 0;
 
         maxData.forEach(function (elem) {
