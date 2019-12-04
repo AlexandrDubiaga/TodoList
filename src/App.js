@@ -85,19 +85,17 @@ class App extends React.Component {
     }
 
     filterTask = (currentTask) => {
-
         let newState = this.state.tasks.filter(t => {
             return t.id != currentTask.id
         })
         let data = this.state.tasks.map(t => t.id);
-        //let maxId = Math.max.apply(null, data);
+        //let maxId = Math.max.apply(null, data);   //не в коем случае блять  не использовать, страшные баги -Infinity , NaN , ,,,,,
         let maxId = 0;
 
         data.forEach(function (elem) {
             if (maxId < elem)
                 maxId = elem;
         });
-
 
         let maxData = data.filter(t => t != maxId);
         let maxDataId = 0;
@@ -106,6 +104,7 @@ class App extends React.Component {
             if (maxDataId < elem)
                 maxDataId = elem;
         });
+        //-Infinity   NaN  !!!Осторожно проверба бляха муха на эту ерунду
         this.setState({
             tasks: newState,
             id: currentTask.id === maxId ? maxDataId + 1 : maxId + 1
