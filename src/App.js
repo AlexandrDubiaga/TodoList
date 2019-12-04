@@ -12,7 +12,7 @@ class App extends React.Component {
     state = {
         tasks: [],
         filterValue: "All",
-        id:1
+        id: 1
     }
 
 
@@ -22,18 +22,19 @@ class App extends React.Component {
             this.setState({
                 tasks: [...this.app.tasks],
                 filterValue: this.app.filterValue,
-                id:this.app.id
+                id: this.app.id
             })
         } else {
             this.setState({
                 tasks: [],
                 filterValue: "All",
-                id:1
+                id: 1
             })
         }
     }
 
     componentWillUpdate(nextProps, nextState) {
+        debugger
         localStorage.setItem('app', JSON.stringify(nextState));
 
     }
@@ -84,14 +85,30 @@ class App extends React.Component {
     }
 
     filterTask = (currentTask) => {
+
         let newState = this.state.tasks.filter(t => {
             return t.id != currentTask.id
         })
-        let data = this.state.tasks.map(t=>t.id);
-        let maxId = Math.max.apply(null, data)
+        let data = this.state.tasks.map(t => t.id);
+        //let maxId = Math.max.apply(null, data);
+        let maxId = 0;
+
+        data.forEach(function (elem) {
+            if (maxId < elem)
+                maxId = elem;
+        });
+
+
+        let maxData = data.filter(t => t != maxId);
+        let maxDataId = 0;
+
+        maxData.forEach(function (elem) {
+            if (maxDataId < elem)
+                maxDataId = elem;
+        });
         this.setState({
             tasks: newState,
-            id:currentTask.id === maxId? parseInt(currentTask.id):parseInt(maxId+1)
+            id: currentTask.id === maxId ? maxDataId + 1 : maxId + 1
         });
     }
 
